@@ -11,7 +11,11 @@ pipeline {
 	   steps {
 	      sh 'lein uberjar'
 	   }
-	   
+	}
+	stage("Deploy") {
+	   steps {
+	      ansiblePlaybook becomeUser: 'ec2-user', installation: 'ansible', inventory: './hosts', playbook: './playbook.yml'
+	   }
 	}
   }     
 }
