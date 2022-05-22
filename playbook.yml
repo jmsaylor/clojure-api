@@ -10,3 +10,6 @@
     - name: Display the User name
       ansible.builtin.debug:
         msg: "Hello User {{ username_on_the_host.stdout }} from Jenkins and Ansible!!"
+
+    - name: Gather EC2 instance metadata
+      action: ec2_facts
