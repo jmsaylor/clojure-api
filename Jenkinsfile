@@ -8,7 +8,10 @@ pipeline {
 	   }
 	}
         stage("Build") {
-	   lein uberjar
+	   steps {
+	      lein uberjar
+	   }
+	   
 	}
   }     
 }
