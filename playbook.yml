@@ -6,12 +6,10 @@
     - name: Get the username running this playbook
       local_action: command whoami
       register: username_on_the_host
-
     - name: Display the User name
       ansible.builtin.debug:
         msg: "Hello User {{ username_on_the_host.stdout }} from Jenkins and Ansible!!"
-
     - name: Copy
       copy:
         src: ~/hello-server-0.1.0-SNAPSHOT-standalone.jar
-	dest: /home/ec2-user/server
+        dest: /home/ec2-user/server
