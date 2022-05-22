@@ -10,6 +10,7 @@
       ansible.builtin.debug:
         msg: "Hello User {{ username_on_the_host.stdout }} from Jenkins and Ansible!!"
     - name: Copy
+      hosts: servers
       copy:
         src: /var/lib/jenkins/workspace/clojure-api/target/hello-server-0.1.0-SNAPSHOT-standalone.jar
         dest: /home/ec2-user/server
