@@ -4,12 +4,12 @@ pipeline {
      stages {
      	stage("Hello") {
 	   steps {
-	   	 echo 'hello pipeline'  
+	      echo 'hello pipeline'  
 	   }
 	}
         stage("Build") {
 	   steps {
-	      lein uberjar
+	      sh 'lein uberjar'
 	   }
 	   
 	}
