@@ -1,6 +1,6 @@
 ---
 - name: Run the test playbook
-  hosts: servers
+  hosts: aws
   tasks:
     - name: Get the username running this playbook
       local_action: command whoami
